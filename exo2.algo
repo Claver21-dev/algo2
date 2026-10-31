@@ -1,0 +1,94 @@
+PROBLÈME 1 : Somme des éléments distincts de deux ensembles
+
+Algorithme Somme_Elements_Distincts
+
+Variables
+    T1, T2 : tableaux d'entiers
+    n, m, i, j : entiers
+    somme : entier
+    trouve : booléen
+
+Début
+    somme ← 0
+
+    T1 ← [3, 1, 7, 9]
+    T2 ← [2, 4, 1, 9, 3]
+
+    n ← 4
+    m ← 5
+
+    // Parcourir le premier tableau
+    Pour i ← 1 à n Faire
+        trouve ← Faux
+
+        Pour j ← 1 à m Faire
+            Si T1[i] = T2[j] Alors
+                trouve ← Vrai
+            FinSi
+        FinPour
+
+        Si trouve = Faux Alors
+            somme ← somme + T1[i]
+        FinSi
+    FinPour
+
+    // Parcourir le deuxième tableau
+    Pour i ← 1 à m Faire
+        trouve ← Faux
+
+        Pour j ← 1 à n Faire
+            Si T2[i] = T1[j] Alors
+                trouve ← Vrai
+            FinSi
+        FinPour
+
+        Si trouve = Faux Alors
+            somme ← somme + T2[i]
+        FinSi
+    FinPour
+
+    Écrire("La somme des éléments distincts est : ", somme)
+
+Fin
+
+PROBLÈME 2 
+ 
+Algorithme Verification_Fonction
+
+Variables
+    v1, v2 : tableaux de réels
+    n, i, j, k : entiers
+    ps : réel
+
+Début
+    Écrire("Donner le nombre de couples de vecteurs : ")
+    Lire(n)
+
+    Pour i ← 1 à n Faire
+
+        Écrire("Donner la dimension des vecteurs : ")
+        Lire(j)
+
+        Pour k ← 1 à j Faire
+            Écrire("Entrer la valeur de v1[", k, "] : ")
+            Lire(v1[k])
+        FinPour
+
+        Pour k ← 1 à j Faire
+            Écrire("Entrer la valeur de v2[", k, "] : ")
+            Lire(v2[k])
+        FinPour
+
+        ps ← dot_product(v1, v2, j)
+
+        Si ps = 0 Alors
+            Écrire("Les vecteurs sont orthogonaux")
+        Sinon
+            Écrire("Les vecteurs ne sont pas orthogonaux")
+        FinSi
+
+    FinPour
+
+Fin
+
+
